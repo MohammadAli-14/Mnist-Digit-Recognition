@@ -82,4 +82,4 @@ If you run from inside `.venv/`, Streamlit will not find `app.py`.
 - Add automated tests for inference and preprocessing steps
 
 ## Author
-Ali
+Mohammed Ali
