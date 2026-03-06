@@ -1,48 +1,85 @@
-# MNIST Digit Recognition
+# MNIST Digit Recognition Web App
 
-Interactive Streamlit app to test a trained CNN on the MNIST handwritten digit dataset. Draw a digit or upload an image to get the predicted class, confidence, and full probability distribution.
+An end-to-end handwritten digit recognition project using a Convolutional Neural Network (CNN) trained on MNIST and deployed with Streamlit.
 
-## Project Contents
-- `app.py` – Streamlit UI for drawing/uploading digits and running predictions
-- `mnist_cnn_model.keras` – Trained TensorFlow/Keras model (preferred format)
-- `mnist_cnn_model.h5` – H5 fallback for broader compatibility
-- `mnist_cnn_weights.weights.h5` – Model weights (not required by the app)
-- `requirements.txt` – Python dependencies
-- `mnist-ml-task.ipynb` – Notebook used to train the model
+The project includes:
+- `mnist-ml-task.ipynb` for data prep, training, evaluation, and model export
+- `app.py` for interactive inference through drawing and image upload
 
-## Prerequisites
-- Python 3.9+ (tested with TensorFlow 2.x)
-- A working virtual environment (recommended)
-- Model file in the project root: `mnist_cnn_model.keras` or `mnist_cnn_model.h5`
+## Key Features
+- Real-time digit prediction from a drawing canvas
+- Image upload support (`png`, `jpg`, `jpeg`, `bmp`)
+- Confidence score and full probability distribution for classes `0-9`
+- Robust model loading with `.keras` (primary) and `.h5` (fallback)
+- Detailed runtime logging for easier debugging and reproducibility
 
-## Setup
+## Tech Stack
+- Python
+- TensorFlow / Keras
+- Streamlit
+- NumPy
+- OpenCV
+- Pillow
+
+## Repository Structure
+- `app.py`: Streamlit inference app
+- `mnist-ml-task.ipynb`: training and evaluation notebook
+- `mnist_cnn_model.keras`: trained model (recommended format)
+- `mnist_cnn_model.h5`: trained model fallback format
+- `mnist_cnn_weights.weights.h5`: model weights only
+- `requirements.txt`: pinned dependencies
+
+## Model Pipeline
+1. Load MNIST dataset
+2. Normalize pixel values to `[0, 1]`
+3. Reshape images to `(28, 28, 1)`
+4. Train CNN model
+5. Evaluate on test set
+6. Save model for deployment
+
+## Local Setup
 ```bash
-# (Optional) create and activate a venv
 python -m venv .venv
-# Windows PowerShell
-.\.venv\Scripts\Activate.ps1
+```
 
-# Install dependencies
+Windows PowerShell:
+```bash
+.\.venv\Scripts\Activate.ps1
+```
+
+Install dependencies:
+```bash
 pip install -r requirements.txt
 ```
 
 ## Run the App
+From the project root (important):
 ```bash
 streamlit run app.py
 ```
-Then open the provided local URL (default: http://localhost:8501).
 
-## Using the App
-- **Draw Digit** tab: draw a digit (0–9) on the canvas, click **Predict**.
-- **Upload Image** tab: upload a PNG/JPG/JPEG/BMP of a single digit, click **Predict**.
-- The app shows predicted digit, confidence, and a bar chart of class probabilities.
+If you run from inside `.venv/`, Streamlit will not find `app.py`.
 
-## Notes
-- The app first tries to load `mnist_cnn_model.keras`, then falls back to `mnist_cnn_model.h5`.
-- If you re-train the model, place the new file in the project root with the same name.
-- Input is converted to grayscale, resized to 28×28, normalized to [0,1], and inverted if the background is white.
+## How to Use
+1. Open the **Draw Digit** tab and draw a digit with your mouse.
+2. Click **Predict** to see class, confidence, and probability chart.
+3. Or use **Upload Image** to test a digit image file.
+
+## Notebook + App Workflow
+- Train and validate model in `mnist-ml-task.ipynb`
+- Export model files (`.keras` / `.h5`)
+- Use `app.py` to serve predictions in a web UI
 
 ## Troubleshooting
-- **Model load error**: ensure `mnist_cnn_model.keras` or `.h5` exists in the project root and matches TensorFlow 2.x.
-- **Blank predictions on canvas**: make sure you draw with visible strokes; the app ignores empty canvases.
-- **GPU issues**: TensorFlow will run on CPU if no GPU is available.
+- `File does not exist: app.py`: run Streamlit from project root, not `.venv`.
+- `No module named ...`: activate virtual environment and reinstall requirements.
+- Model load errors: ensure `mnist_cnn_model.keras` or `mnist_cnn_model.h5` is present in project root.
+- TensorFlow CPU info/warnings in terminal: informational only, app can still run correctly.
+
+## Future Improvements
+- Add model versioning and experiment tracking
+- Add optional preprocessing preview controls in UI
+- Add automated tests for inference and preprocessing steps
+
+## Author
+Ali
