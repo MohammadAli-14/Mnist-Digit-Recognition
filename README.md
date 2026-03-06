@@ -6,14 +6,6 @@
 [![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)
 
 An end-to-end machine learning application for handwritten digit recognition using deep learning. This project includes complete model training, evaluation, and deployment through an interactive web interface.
-### Training Curves
-
-<img src="/TrainingCurve.png" alt="Training Curves" width="800"/>
-
-
-### Confusion Matrix
-
-<img src="/ConfusionMatrix.png" alt="Confusion Matrix" width="600"/>
 
 ## 🌟 Live Demo
 
@@ -212,6 +204,17 @@ Non-trainable params: 0
 |--------|----------|------------|------|
 | **Accuracy** | 99.2% | 98.9% | 98.7% |
 | **Loss** | 0.024 | 0.038 | 0.041 |
+
+### Training Curves
+
+<img src="/TrainingCurve.png" alt="Training Curves" width="800"/>
+
+
+### Confusion Matrix
+
+<img src="/ConfusionMatrix.png" alt="Confusion Matrix" width="600"/>
+
+
 
 
 ## 🌐 Deployment
