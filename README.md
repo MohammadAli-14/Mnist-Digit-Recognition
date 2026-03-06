@@ -207,13 +207,13 @@ Non-trainable params: 0
 
 ### Training Curves
 
-<img src="assets/training_curves.png" alt="Training Curves" width="800"/>
+<img src="Training Curves.png" alt="Training Curves" width="800"/>
 
 *Add your training/validation accuracy and loss plots*
 
 ### Confusion Matrix
 
-<img src="assets/confusion_matrix.png" alt="Confusion Matrix" width="600"/>
+<img src="Confusion Matrix.png" alt="Confusion Matrix" width="600"/>
 
 *Add your confusion matrix visualization*
 
