@@ -307,8 +307,7 @@ This project is licensed under the MIT License - see the [LICENSE](LICENSE) file
 **Mohammad Ali**
 
 - GitHub: [@MohammadAli-14](https://github.com/MohammadAli-14)
-- LinkedIn: [Your LinkedIn Profile](https://linkedin.com/in/your-profile)
-- Email: your.email@example.com
+- LinkedIn: [LinkedIn Profile](https://www.linkedin.com/in/mohammedali-deve)
 
 ## 🙏 Acknowledgments
 
